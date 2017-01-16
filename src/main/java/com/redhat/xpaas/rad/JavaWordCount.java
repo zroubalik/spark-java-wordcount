@@ -63,9 +63,6 @@ public final class JavaWordCount {
 					}
 				});
 
-		JavaPairRDD<String, Integer> ones2 = words.mapToPair(
-				(PairFunction<String, String, Integer>) s -> new Tuple2<>(s, 1));
-
 		JavaPairRDD<String, Integer> counts = ones.reduceByKey(
 				new Function2<Integer, Integer, Integer>() {
 					@Override
